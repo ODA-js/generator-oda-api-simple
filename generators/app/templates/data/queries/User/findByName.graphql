@@ -1,0 +1,5 @@
+query findUserByName($userName:String){
+  user(userName: $userName){
+    ...ViewUser
+  }
+}

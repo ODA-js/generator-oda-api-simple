@@ -1,0 +1,38 @@
+{
+  "name": "api-sample",
+  "version": "1.0.0",
+  "description": "sample api for uiTemplate",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node bin/www",
+    "postinstall": "npm run compile",
+    "generate": "node dist/generate.js",
+    "genUml": "node dist/genUml.js",
+    "debug": "node --debug-brk src/index.js",
+    "updateSchema": "node updateSchema.js",
+    "compile": "./compile.sh 2> /dev/null",
+    "collector": "cd data/queries && graphql-document-collector '**/*.graphql' > ../seed-queries.json",
+    "restoreData": "node dist/seeds/restoreDirect.js data/dump.json",
+    "dumpData": "node dist/seeds/dumpDirect.js data/dump_1.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "dotenv": "^4.0.0",
+    "oda-api-common": "^0.0.1",
+    "oda-api-graphql": "^0.0.2",
+    "oda-gen-graphql": "^0.0.10",
+    "oda-model": "^0.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^0.0.37",
+    "@types/inflected": "^1.1.29",
+    "@types/mongoose": "^4.5.41",
+    "@types/node": "^7.0.5",
+    "@types/passport": "^0.3.0",
+    "graphql-document-collector": "^0.1.1",
+    "typescript": "^2.2.2"
+  }
+}

@@ -1,0 +1,9 @@
+mutation createUser($user:createUserInput!){
+  createUser(input:$user){
+    user{
+      node {
+        id
+      }
+    }
+  }
+}

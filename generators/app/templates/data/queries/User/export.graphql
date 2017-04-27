@@ -1,0 +1,11 @@
+query ExportUsers {
+  viewer{
+    users{
+      edges{
+        node{
+          ...ViewUser
+        }
+      }
+    }
+  }
+}

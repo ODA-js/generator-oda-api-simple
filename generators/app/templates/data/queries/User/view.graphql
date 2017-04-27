@@ -1,0 +1,7 @@
+fragment ViewUser on User {
+  enabled
+  userName
+  password
+  isSystem
+  isAdmin
+}

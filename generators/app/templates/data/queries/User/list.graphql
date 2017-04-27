@@ -1,0 +1,11 @@
+query Users {
+  viewer{
+    users{
+      edges{
+        node{
+          ...ViewUser
+        }
+      }
+    }
+  }
+}
