@@ -4,6 +4,7 @@ const Generator = require('yeoman-generator');
 const askName = require('inquirer-npm-name');
 const _ = require('lodash');
 const mkdirp = require('mkdirp');
+const crypto = require('crypto');
 
 function makeProjectName(name) {
   name = _.kebabCase(name);
@@ -13,7 +14,13 @@ function makeProjectName(name) {
 
 module.exports = class extends Generator {
   initializing() {
-    this.props = {};
+    this.props = {
+      hash: {
+        default: crypto.randomBytes(40).toString('base64'),
+        production: crypto.randomBytes(40).toString('base64'),
+        secret: crypto.randomBytes(40).toString('base64')
+      }
+    };
   }
 
   prompting() {
@@ -46,16 +53,17 @@ module.exports = class extends Generator {
       this.templatePath('**/*'),
       this.destinationPath(),
       {
-        projectName: this.props.name
+        projectName: this.props.name,
+        hash: this.props.hash
       }
     );
   }
 
   install() {
-    this.installDependencies({
-      bower: false, callback: function () {
-        console.log('Happy ODA api hacking!!!!');
-      }
-    });
+    // This.installDependencies({
+    //   bower: false, callback: function () {
+    //     console.log('Happy ODA api hacking!!!!');
+    //   }
+    // });
   }
 };

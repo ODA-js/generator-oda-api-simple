@@ -1,19 +1,19 @@
 {
-  "AppName": "api-courseware",
+  "AppName": "<%= projectName %>",
   "hosts": {
-    "api-sample": {
+    "<%= projectName %>": {
       "host": "localhost",
       "port": 3003
     }
   },
   "db": {
     "api": {
-      "url": "mongodb://localhost/api-sample"
+      "url": "mongodb://localhost/<%= projectName %>-test"
     }
   },
   "passport": {
-    "salt2": "0000000000000000000000000000000000000000",
-    "secret": "THE VERY secret ONE",
+    "salt2": "<%= hash.default %>",
+    "secret": "THE VERY <%= projectName %> <%= hash.secret %> ONE",
     "expiresIn": "1h"
   }
 }
