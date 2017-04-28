@@ -1,6 +1,6 @@
 {
   "name": "generator-oda-api-simple",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "api-simple project genrator",
   "homepage": "",
   "author": {
@@ -49,6 +49,6 @@
       "node": true
     }
   },
-  "repository": "vedmalex/generator-oda-api-simple",
+  "repository": "ODA-js/generator-oda-api-simple",
   "license": "MIT"
 }
