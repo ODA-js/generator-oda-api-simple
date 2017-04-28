@@ -60,10 +60,10 @@ module.exports = class extends Generator {
   }
 
   install() {
-    // This.installDependencies({
-    //   bower: false, callback: function () {
-    //     console.log('Happy ODA api hacking!!!!');
-    //   }
-    // });
+    this.installDependencies({
+      bower: false, callback: function () {
+        console.log('Happy ODA api hacking!!!!');
+      }
+    });
   }
 };
