@@ -1,14 +1,15 @@
 {
-  "name": "api-sample",
+  "name": "<%= projectName %>",
   "version": "1.0.0",
   "description": "sample api for uiTemplate",
   "main": "dist/app.js",
   "scripts": {
+    "watch": "tsc -w -p ./",
     "start": "node bin/www",
     "postinstall": "npm run compile",
     "generate": "node dist/generate.js",
     "genUml": "node dist/genUml.js",
-    "debug": "node --debug-brk src/index.js",
+    "debug": "node --debug-brk bin/www",
     "updateSchema": "node updateSchema.js",
     "compile": "./compile.sh 2> /dev/null",
     "collector": "cd data/queries && graphql-document-collector '**/*.graphql' > ../seed-queries.json",

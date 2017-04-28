@@ -1,4 +1,4 @@
-#run
+# run <%= projectName %>
 
 install deps
 `yarn`
