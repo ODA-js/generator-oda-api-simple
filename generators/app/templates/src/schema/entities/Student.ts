@@ -2,11 +2,9 @@ export default {
   name: 'Student',
   fields: {
     firstName: {
-      identity: 'FN',
+      indexed: true,
     },
-    middleName: {
-      identity: 'FN',
-    },
+    middleName: {},
     lastName: {
       identity: true,
     },
