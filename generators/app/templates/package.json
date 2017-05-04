@@ -24,7 +24,7 @@
     "dotenv": "^4.0.0",
     "oda-api-common": "^0.0.1",
     "oda-api-graphql": "^0.0.2",
-    "oda-gen-graphql": "^0.0.10",
+    "oda-gen-graphql": "^0.0.13",
     "oda-model": "^0.0.3"
   },
   "devDependencies": {
