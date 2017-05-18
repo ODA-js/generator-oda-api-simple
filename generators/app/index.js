@@ -26,7 +26,7 @@ module.exports = class extends Generator {
   prompting() {
     return askName({
       name: 'name',
-      message: 'Your generator name',
+      message: 'Your API-project name',
       default: makeProjectName(path.basename(process.cwd())),
       filter: makeProjectName,
       validate: str => {
