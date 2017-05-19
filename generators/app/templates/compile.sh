@@ -2,7 +2,7 @@
 echo remove dist
 rm -rf dist
 echo typescript
-tsc 2> /dev/null
+tsc 2> /dev/null 1> /dev/null
 echo generate
 npm run generate 2> /dev/null
 echo typescript
