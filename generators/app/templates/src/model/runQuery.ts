@@ -30,7 +30,7 @@ export class SystemGraphQL {
       });
     }
     return SystemGraphQL._schema;
-  })();
+  });
 
   public static async connectors() {
     return new RegisterConnectors({
