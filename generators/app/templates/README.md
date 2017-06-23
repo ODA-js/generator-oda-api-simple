@@ -1,7 +1,7 @@
 # run <%= projectName %>
 
 install deps
-`yarn`
+`npm`
 
 compile code
 `npm run compile`
@@ -12,6 +12,7 @@ restore inital data
 run api
 `node start`
 
-use  `DEBUG=express:server npm start` to run with extended debug log
 use `src/register.ts` to configure logger
 check `src/schema/packages` to generate diagrams
+
+Checkout sample queries for the sample schema

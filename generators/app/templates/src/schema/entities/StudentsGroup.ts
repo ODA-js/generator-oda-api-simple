@@ -15,7 +15,7 @@ export default {
     students: {
       indexed: true,
       relation: {
-        hasMany: 'Student#',
+        hasMany: 'Student#group',
       },
     },
   },

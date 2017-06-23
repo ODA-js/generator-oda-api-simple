@@ -1,9 +1,12 @@
 {
   "User": [
     {
+      "id": "VXNlcjpmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY=",
       "enabled": true,
       "userName": "system",
-      "password": "123456"
+      "password": "123456",
+      "isSystem": true,
+      "isAdmin": true
     }
   ]
 }

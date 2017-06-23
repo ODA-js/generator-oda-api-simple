@@ -1,0 +1,17 @@
+subscription {
+  Student {
+    mutation
+    node {
+      id
+    }
+    payload {
+      __typename
+      ... on UpdateStudentSubscriptionPayload{
+        middleName
+        lastName
+        dateOfBirth
+        firstName
+      }
+    }
+  }
+}

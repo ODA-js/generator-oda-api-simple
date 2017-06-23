@@ -12,6 +12,7 @@
     "debug": "node --debug-brk bin/www",
     "updateSchema": "node updateSchema.js",
     "compile": "./compile.sh 2> /dev/null",
+    "clean": "./clean.sh",
     "collector": "cd data/queries && graphql-document-collector '**/*.graphql' > ../seed-queries.json",
     "restoreData": "node dist/seeds/restoreDirect.js data/dump.json",
     "dumpData": "node dist/seeds/dumpDirect.js data/dump_1.json"
@@ -19,21 +20,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-upload-server": "^2.0.2",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "dotenv": "^4.0.0",
-    "oda-api-common": "^0.1.1",
-    "oda-api-graphql": "^0.1.4",
-    "oda-gen-graphql": "^0.1.6",
-    "oda-model": "^0.0.7"
+    "graphql-subscriptions": "^0.4.3",
+    "oda-api-common": "^0.1.3",
+    "oda-api-graphql": "^0.2.6",
+    "oda-gen-graphql": "^0.2.9",
+    "oda-model": "^0.0.9",
+    "subscriptions-transport-ws": "^0.7.3"
   },
   "devDependencies": {
-    "@types/fs-extra": "^3.0.1",
+    "@types/fs-extra": "^3.0.3",
     "@types/inflected": "^1.1.29",
-    "@types/mongoose": "^4.5.41",
-    "@types/node": "^7.0.5",
-    "@types/passport": "^0.3.0",
-    "graphql-document-collector": "^0.1.1",
-    "typescript": "^2.3.2"
+    "@types/mongoose": "^4.7.18",
+    "@types/node": "^8.0.1",
+    "@types/passport": "^0.3.3",
+    "graphql-document-collector": "^0.1.3",
+    "typescript": "^2.3.4"
   }
 }

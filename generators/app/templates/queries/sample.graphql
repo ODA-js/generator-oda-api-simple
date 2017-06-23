@@ -1,0 +1,134 @@
+query users {
+  users {
+    edges {
+      node {
+        userName
+        enabled
+        isAdmin
+        isSystem
+      }
+    }
+  }
+}
+
+query students {
+  students(filter: {uin: {match: "111"}}) {
+    edges {
+      node {
+        firstName
+        uin
+        dateOfBirth
+        id
+        profile {
+          id
+          maths
+          physics
+          language
+        }
+        group {
+          name
+          id
+          subjects {
+            edges {
+              node {
+                name
+                teacher {
+                  firstName
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query Subjects {
+  subjects {
+    edges {
+      node {
+        name
+        id
+        teacher {
+          firstName
+          middleName
+          lastName
+          id
+        }
+        groups{
+          edges{
+            node{
+              name
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query Teachers {
+  teachers {
+    edges {
+      node {
+        id
+        firstName
+        middleName
+        lastName
+        subjects {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation attachSubjectToGroup {
+  addToStudentsGroupBelongsToManySubjects(input: {subject: "U3ViamVjdDo1OTQ5MmMxMDQwZjdiMjY3ZmIxMjJkMWQ=", studentsGroup: "U3R1ZGVudHNHcm91cDo1OTFlYmM2M2FhZjg1MTU0NDczOTA4Yzk="}) {
+    clientMutationId
+  }
+}
+
+mutation attachSubjecttoTeacher {
+  addToSubjectBelongsToTeacher(input: {subject: "U3ViamVjdDo1OTQ5MmMxMDQwZjdiMjY3ZmIxMjJkMWQ=", teacher: "VGVhY2hlcjo1OTQ5MmM3YTQwZjdiMjY3ZmIxMjJkMWU="}) {
+    subject {
+      id
+    }
+  }
+}
+
+mutation createTeacher {
+  createTeacher(input: {firstName: "1", middleName: "1", lastName: "1"}) {
+    teacher {
+      node {
+        id
+      }
+    }
+  }
+}
+
+mutation createSubject {
+  createSubject(input: {name: "First"}) {
+    subject {
+      node {
+        id
+      }
+    }
+  }
+}
+
+mutation updateStudent {
+  updateStudent(input: {id: "U3R1ZGVudDo1OTFlYmJiN2FhZjg1MTU0NDczOTA4Yzg=", dateOfBirth: "1979-06-20T13:33:00.000Z"}) {
+    student {
+      id
+      dateOfBirth
+    }
+  }
+}

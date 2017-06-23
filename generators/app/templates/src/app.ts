@@ -11,7 +11,7 @@ import RegisterConnectors from './model/connectors';
 
 import { SystemGraphQL } from './model/runQuery';
 
-import { GraphQLSchema } from 'graphql';
+import { GraphQLSchema, execute, subscribe } from 'graphql';
 
 import * as path from 'path';
 
@@ -24,18 +24,51 @@ import { SystemSchema } from './model';
 import * as compression from 'compression';
 import { Factory } from 'fte.js';
 
+// subscriptions
+import { SubscriptionManager } from 'graphql-subscriptions';
+import { pubsub } from './model/pubsub';
+import { dbPool } from './model/dbPool';
+import { createServer } from 'http';
+import { SubscriptionServer } from 'subscriptions-transport-ws';
+import { apolloUploadExpress } from 'apollo-upload-server';
+
+const WS_PORT = config.get<number>('subscriptions.port');
+const WS_HOST = config.get<number>('subscriptions.host');
+
+async function createContext() {
+  let db = await dbPool.get('system');
+  let connectors = new RegisterConnectors({
+    mongoose: db
+  });
+  return {
+    connectors,
+    systemConnectors: await SystemGraphQL.connectors(),
+    systemGQL: SystemGraphQL.query,
+    db,
+    // user: passport.systemUser(),
+    // owner: passport.systemUser(),
+    dbPool,
+    pubsub,
+  };
+}
+
+function prepareSchema() {
+  let current = new SystemSchema({});
+  current.build();
+  return makeExecutableSchema({
+    typeDefs: current.typeDefs.toString(),
+    resolvers: current.resolvers,
+    resolverValidationOptions: {
+      requireResolversForNonScalar: false,
+    },
+  });
+}
+
 export class SampleApiServer extends Server {
   public config() {
     super.config();
-    let current = new SystemSchema({});
-    current.build();
-    let schema = makeExecutableSchema({
-      typeDefs: current.typeDefs.toString(),
-      resolvers: current.resolvers,
-      resolverValidationOptions: {
-        requireResolversForNonScalar: false,
-      },
-    });
+
+    let schema = prepareSchema();
 
     this.initLogger();
 
@@ -49,28 +82,46 @@ export class SampleApiServer extends Server {
       ext: 'nhtml',
     });
 
-    this.app.use(middleware.dbPool.createDbPool(config.get<string>('db.api.url')));
-
     this.app.set('view engine', 'nhtml');
     this.app.engine('nhtml', index.express());
 
     this.app.use(compression());
 
+    const websocketServer = createServer((request, response) => {
+      response.writeHead(404);
+      response.end();
+    });
+
+    // Bind it to port and start listening
+    websocketServer.listen(WS_PORT, () => console.log(
+      `Websocket Server is now running on http://${WS_HOST}:${WS_PORT}`,
+    ));
+
+    const subscriptionsServer = new SubscriptionServer({
+      execute,
+      subscribe,
+      schema,
+      onConnect: async (connectionParams, webSocket) => {
+        return await createContext();
+      },
+    },
+      {
+        server: websocketServer,
+      },
+    );
+
     const buildSchema = graphqlExpress(async (req, res) => {
-      let db = await req['dbPool'].get('system');
-      let connectors = new RegisterConnectors({ mongoose: db });
       return {
         schema,
-        context: {
-          connectors,
-          systemConnectors: await SystemGraphQL.connectors(),
-          systemGQL: SystemGraphQL.query,
-          db,
-        },
+        context: await createContext(),
       };
     });
 
-    this.app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+    this.app.use('/graphiql', graphiqlExpress({
+      endpointURL: '/graphql',
+      subscriptionsEndpoint: `ws://${WS_HOST}:${WS_PORT}/subscriptions`,
+    }));
+
     this.app.use('/graphql', bodyParser.json(), buildSchema);
 
     this.errorHandling();

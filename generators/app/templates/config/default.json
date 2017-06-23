@@ -6,6 +6,10 @@
       "port": 3003
     }
   },
+  "subscriptions": {
+    "host": "localhost",
+    "port": 3004
+  },
   "db": {
     "api": {
       "url": "mongodb://localhost/<%= projectName %>-test"

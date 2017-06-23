@@ -7,6 +7,12 @@ export default {
     password: {
       required: true,
     },
+    isAdmin: {
+      type: 'boolean',
+    },
+    isSystem: {
+      type: 'boolean',
+    },
     enabled: {
       type: 'boolean',
     },

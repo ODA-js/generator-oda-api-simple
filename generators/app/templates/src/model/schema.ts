@@ -1,6 +1,8 @@
 // tslint:disable:no-unused-variable
 import { common } from 'oda-gen-graphql';
 import { SystemPackage } from './../graphql-gen/system';
+import { pubsub } from './pubsub';
+import { withFilter } from 'graphql-subscriptions';
 const { deepMerge } = common.lib;
 
 import { CommonExtends } from './common';
@@ -29,6 +31,7 @@ export class SystemSchema extends common.types.GQLModule {
       }
 
       type RootSubscription {
+        ${this.subscriptionEntry.join('\n  ')}
         login: User
       }
 
@@ -48,12 +51,11 @@ export class SystemSchema extends common.types.GQLModule {
       {
         RootQuery: this.query,
         RootMutation: this.mutation,
-        RootSubscription: {
-          login: user => {
-            console.log('user');
-            return user;
+        RootSubscription: deepMerge(this.subscription, {
+          login: {
+            subscribe: () => pubsub.asyncIterator('login'),
           }
-        }
+        }),
       },
     );
   }

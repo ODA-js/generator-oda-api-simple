@@ -13,7 +13,7 @@ export default {
     subjects: {
       indexed: true,
       relation: {
-        hasMany: 'Subject#',
+        hasMany: 'Subject#teacher',
       },
     },
   },
