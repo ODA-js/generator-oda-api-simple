@@ -1,7 +1,0 @@
-mutation updateUser($user:updateUserInput!){
-  updateUser(input:$user){
-    user{
-      ...ViewUser
-    }
-  }
-}

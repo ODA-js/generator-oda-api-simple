@@ -8,5 +8,69 @@
       "isSystem": true,
       "isAdmin": true
     }
-  ]
+  ],
+  "Student": [
+    {
+      "firstName": "Alex",
+      "middleName": "J",
+      "lastName": "Johnson",
+      "uin": "007",
+      "dateOfBirth": "1955-10-01T21:00:00.000Z",
+      "profile": {
+        "maths": 100,
+        "physics": 100,
+        "language": 100
+      },
+      "group": {
+        "name": "ANOTHERS SUPER GROUP"
+      }
+    },
+    {
+      "firstName": "Andy",
+      "middleName": "X",
+      "lastName": "Madison",
+      "uin": "008",
+      "dateOfBirth": "1950-03-10T21:00:00.000Z",
+      "profile": {
+        "maths": 100,
+        "physics": 100,
+        "language": 100
+      },
+      "group": {
+        "name": "JUST METEOR GUY!!!"
+      }
+    },
+    {
+      "firstName": "Nike",
+      "middleName": "M",
+      "lastName": "Johnson",
+      "uin": "009",
+      "dateOfBirth": "1955-12-31T21:00:00.000Z",
+      "profile": {
+        "maths": 100,
+        "physics": 100,
+        "language": 100
+      },
+      "group": {
+        "name": "ANOTHERS SUPER GROUP"
+      }
+    }
+  ],
+  "StudentsGroup": [
+    {
+      "name": "MASTERS OF JS"
+    },
+    {
+      "name": "ANOTHERS SUPER GROUP"
+    }
+  ],
+  "Subject": [
+    {
+      "name": "COOL"
+    },
+    {
+      "name": "COOL1"
+    }
+  ],
+  "Teacher": []
 }

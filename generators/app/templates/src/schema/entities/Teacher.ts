@@ -2,13 +2,13 @@ export default {
   name: 'Teacher',
   fields: {
     firstName: {
-      indexed: true,
+      identity: 'fullName',
     },
     middleName: {
-      indexed: true,
+      identity: 'fullName',
     },
     lastName: {
-      indexed: true,
+      identity: 'fullName',
     },
     subjects: {
       indexed: true,

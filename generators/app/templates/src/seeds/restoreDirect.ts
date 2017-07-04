@@ -22,37 +22,62 @@ import * as config from 'config';
 
 let fn = process.argv[2] ? joinPath(process.cwd(), process.argv[2]) : joinPath(__dirname, '../../data/dump.json');
 
-let db = mongoose.createConnection(config.get<string>('db.api.url'));
 
-let connectors = new RegisterConnectors({
-  mongoose: db,
-});
+import { dbPool } from '../model/dbPool';
+import { SystemGraphQL, UserGQL } from '../model/runQuery';
+import { pubsub } from '../model/pubsub';
 
-let current = new SystemSchema({});
-current.build();
-let schema = makeExecutableSchema({
-  typeDefs: current.typeDefs.toString(),
-  resolvers: current.resolvers,
-  resolverValidationOptions: {
-    requireResolversForNonScalar: false,
-  },
-});
+async function createContext({ schema }) {
+  let db = await dbPool.get('system');
+  let connectors = new RegisterConnectors({
+    mongoose: db
+  });
+  const result = {
+    connectors,
+    systemConnectors: await SystemGraphQL.connectors(),
+    systemGQL: SystemGraphQL.query,
+    userGQL: undefined,
+    db,
+    // user: passport.systemUser(),
+    // owner: passport.systemUser(),
+    dbPool,
+    pubsub,
+  };
+
+  const userGQL = new UserGQL({
+    context: result,
+    schema,
+  });
+
+  result.userGQL = userGQL.query.bind(userGQL);
+
+  return result;
+}
+
+function prepareSchema() {
+  let current = new SystemSchema({});
+  current.build();
+  return makeExecutableSchema({
+    typeDefs: current.typeDefs.toString(),
+    resolvers: current.resolvers,
+    resolverValidationOptions: {
+      requireResolversForNonScalar: false,
+    },
+  });
+}
+
+const schema = prepareSchema();
 
 // tslint:disable-next-line:no-var-requires
 let data = require(fn);
-dataPump.restoreDataDirect(loaderConfig, storedQ, data, schema, {
-  connectors,
-  db: db,
-}).
-  then(() => dataPump.relateDataDirect(loaderConfig, storedQ, data, schema, {
-    connectors,
-    db: db,
-  }))
-  .then(() => {
-    db.close();
-  })
-  .catch(e => {
-    console.error(e);
-    db.close();
-  });
-
+createContext({ schema }).then(context => {
+  dataPump.restoreDataDirect(loaderConfig, storedQ, data, schema, context).
+    then(() => dataPump.relateDataDirect(loaderConfig, storedQ, data, schema, context))
+    .then(() => {
+      context.db.close();
+    })
+    .catch(e => {
+      console.error(e);
+      context.db.close();
+    });
+});

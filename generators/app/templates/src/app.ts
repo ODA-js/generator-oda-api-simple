@@ -9,7 +9,7 @@ let currentModule = require('../package.json');
 
 import RegisterConnectors from './model/connectors';
 
-import { SystemGraphQL } from './model/runQuery';
+import { SystemGraphQL, UserGQL } from './model/runQuery';
 
 import { GraphQLSchema, execute, subscribe } from 'graphql';
 
@@ -35,21 +35,31 @@ import { apolloUploadExpress } from 'apollo-upload-server';
 const WS_PORT = config.get<number>('subscriptions.port');
 const WS_HOST = config.get<number>('subscriptions.host');
 
-async function createContext() {
+async function createContext({ schema }) {
   let db = await dbPool.get('system');
   let connectors = new RegisterConnectors({
-    mongoose: db
+    mongoose: db,
   });
-  return {
+  const result = {
     connectors,
     systemConnectors: await SystemGraphQL.connectors(),
     systemGQL: SystemGraphQL.query,
+    userGQL: undefined,
     db,
     // user: passport.systemUser(),
     // owner: passport.systemUser(),
     dbPool,
     pubsub,
   };
+
+  const userGQL = new UserGQL({
+    context: result,
+    schema,
+  });
+
+  result.userGQL = userGQL.query.bind(userGQL);
+
+  return result;
 }
 
 function prepareSchema() {
@@ -102,7 +112,7 @@ export class SampleApiServer extends Server {
       subscribe,
       schema,
       onConnect: async (connectionParams, webSocket) => {
-        return await createContext();
+        return await createContext({ schema });
       },
     },
       {
@@ -113,7 +123,7 @@ export class SampleApiServer extends Server {
     const buildSchema = graphqlExpress(async (req, res) => {
       return {
         schema,
-        context: await createContext(),
+        context: await createContext({ schema }),
       };
     });
 

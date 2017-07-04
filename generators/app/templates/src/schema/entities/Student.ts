@@ -2,11 +2,13 @@ export default {
   name: 'Student',
   fields: {
     firstName: {
-      indexed: true,
+      identity: "fullName"
     },
-    middleName: {},
+    middleName: {
+      identity: "fullName"
+    },
     lastName: {
-      identity: true,
+      identity: "fullName"
     },
     uin: {
       identity: true,
@@ -15,9 +17,8 @@ export default {
       type: 'Date',
     },
     profile: {
-      indexed: true,
       relation: {
-        hasOne: 'StudentProfile#',
+        hasOne: 'StudentProfile#student',
       },
     },
     group: {

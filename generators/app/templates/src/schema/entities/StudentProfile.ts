@@ -10,6 +10,7 @@ export default {
       type: 'number',
     },
     language: {
+      indexed: true,
       type: 'number',
     },
     student: {

@@ -21,38 +21,61 @@ import * as config from 'config';
 
 let fn = process.argv[2] ? joinPath(process.cwd(), process.argv[2]) : joinPath(__dirname, '../../data/dump1.json');
 
-let db = mongoose.createConnection(config.get<string>('db.api.url'));
+import { dbPool } from '../model/dbPool';
+import { SystemGraphQL, UserGQL } from '../model/runQuery';
+import { pubsub } from '../model/pubsub';
 
-let connectors = new RegisterConnectors({
-  mongoose: db,
-  user: passport.systemUser(),
-  owner: passport.systemUser(),
-});
-
-let current = new SystemSchema({});
-
-current.build();
-let schema = makeExecutableSchema({
-  typeDefs: current.typeDefs.toString(),
-  resolvers: current.resolvers,
-  resolverValidationOptions: {
-    requireResolversForNonScalar: false,
-  },
-});
-
-dataPump.dumpDataDirect(loaderConfig, storedQ, schema, {
-  connectors,
-  db: db,
-  user: passport.systemUser(),
-  owner: passport.systemUser(),
-}).
-  then((result) => {
-    writeFileSync(fn, JSON.stringify(result));
-    db.close();
-  })
-  .catch(e => {
-    console.error(e);
-    db.close();
+async function createContext({ schema }) {
+  let db = await dbPool.get('system');
+  let connectors = new RegisterConnectors({
+    mongoose: db
   });
+  const result = {
+    connectors,
+    systemConnectors: await SystemGraphQL.connectors(),
+    systemGQL: SystemGraphQL.query,
+    userGQL: undefined,
+    db,
+    // user: passport.systemUser(),
+    // owner: passport.systemUser(),
+    dbPool,
+    pubsub,
+  };
+
+  const userGQL = new UserGQL({
+    context: result,
+    schema,
+  });
+
+  result.userGQL = userGQL.query.bind(userGQL);
+
+  return result;
+}
+
+function prepareSchema() {
+  let current = new SystemSchema({});
+  current.build();
+  return makeExecutableSchema({
+    typeDefs: current.typeDefs.toString(),
+    resolvers: current.resolvers,
+    resolverValidationOptions: {
+      requireResolversForNonScalar: false,
+    },
+  });
+}
+
+const schema = prepareSchema();
+
+createContext({ schema }).then(context => {
+  dataPump.dumpDataDirect(loaderConfig, storedQ, schema, context).
+    then((result) => {
+      writeFileSync(fn, JSON.stringify(result));
+      context.db.close();
+    })
+    .catch(e => {
+      console.error(e);
+      context.db.close();
+    });
+});
 
 

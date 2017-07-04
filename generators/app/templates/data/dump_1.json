@@ -1,0 +1,132 @@
+{
+  "User": [
+    {
+      "id": "VXNlcjo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDU=",
+      "userName": "system",
+      "password": "{\"salt\":\"g3Fav6XtoPT8xOnaVUwk2g==\",\"hash\":\"Z9IwBTtJ7MNmbMAENMmGfthnfK4omS4EfEXk06QpLAVVgvRXqZRqN8wdamrE5SRHytDg4LgqebR+GdpoTJd2SuWiy4zPZ6EijCtUnhi9AQPskz/cHKnmqW8pvFzu/IfbXgBovnjm/0zp7EGeDGaejKm9u9YoUaQNL4YbzPputzzB9Zquxl4aOGR9eXP7LZW/sg/IRoDqGNhgBQw9qf77DPG4nYc0M0W3mf7XlIOuIIldxvGzp1qVsu8KNwQsnq2DJffY4mpkG7Lzf2kWic+lu/y4htUA280gTziAPQr2gagCOEKsVvT9J7R5z6TO58tv++L7LJmMOHPqN7MUaGOJr7qVafm/Qsv/oL+Zekxh/pi8+86d8TS3itCeOlq5jbVK3aDrB5omqQl62/QZAY9DfIzKKjRWfHsbud1+WLy4ZM6OpS3N5JHnhR2O3dHZE4szzgrW64mc4bMCoCDqnNHAyd+VKQE8Ha2te9ljovOQE9sFOST47swG2Dx2t2w4/sJ9XEaSFfvqcbOT9NKtRX3sBHAT3TiJhI/7foj26HSTlRL7y958VtWJ96eudO+gnhcUAgCuHjBygsiYbgvUnFVuV4slc0GqY01o5F3shQxZRg08enCzhSaqIyM2SwaLOBgKHYOknJrSnOc95TS3tNMkVOwfIbdva4O+WEBhO0mPyT4=\"}",
+      "isAdmin": true,
+      "isSystem": true,
+      "enabled": true
+    }
+  ],
+  "Student": [
+    {
+      "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY=",
+      "firstName": "Alex",
+      "middleName": "I",
+      "lastName": "Vedmedenko",
+      "uin": "007",
+      "dateOfBirth": "1978-06-01T21:00:00.000Z",
+      "profile": {
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWQ3"
+      },
+      "group": {
+        "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg="
+      }
+    },
+    {
+      "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk=",
+      "firstName": "Nike",
+      "middleName": "M",
+      "lastName": "Johnson",
+      "uin": "009",
+      "dateOfBirth": "1955-12-31T21:00:00.000Z",
+      "profile": {
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWRh"
+      },
+      "group": {
+        "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg="
+      }
+    },
+    {
+      "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY=",
+      "firstName": "Andrew",
+      "middleName": "X",
+      "lastName": "Manson",
+      "uin": "008",
+      "dateOfBirth": "1978-06-01T21:00:00.000Z",
+      "profile": {
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YjRmOWQ4YTcyMzAwZDFmYjc1ZjYw"
+      },
+      "group": {
+        "id": "U3R1ZGVudHNHcm91cDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNjE="
+      }
+    }
+  ],
+  "StudentsGroup": [
+    {
+      "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg=",
+      "name": "ANOTHERS SUPER GROUP",
+      "subjects": [],
+      "students": [
+        {
+          "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY="
+        },
+        {
+          "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk="
+        }
+      ]
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZGI=",
+      "name": "MASTERS OF JS",
+      "subjects": [],
+      "students": []
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNjE=",
+      "name": "JUST METEOR GUY!!!",
+      "subjects": [],
+      "students": [
+        {
+          "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY="
+        }
+      ]
+    }
+  ],
+  "StudentProfile": [
+    {
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWQ3",
+      "maths": 100,
+      "physics": 100,
+      "language": 100,
+      "student": {
+        "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY="
+      }
+    },
+    {
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWRh",
+      "maths": 100,
+      "physics": 100,
+      "language": 100,
+      "student": {
+        "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk="
+      }
+    },
+    {
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YjRmOWQ4YTcyMzAwZDFmYjc1ZjYw",
+      "maths": 100,
+      "physics": 100,
+      "language": 100,
+      "student": {
+        "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY="
+      }
+    }
+  ],
+  "Teacher": [],
+  "Subject": [
+    {
+      "id": "U3ViamVjdDo1OTVhNjE5Mjg3OGU5NzQxZWUyODhmYWY=",
+      "name": "COOL",
+      "groups": [],
+      "teacher": null
+    },
+    {
+      "id": "U3ViamVjdDo1OTVhNjE5Mjg3OGU5NzQxZWUyODhmYjA=",
+      "name": "COOL1",
+      "groups": [],
+      "teacher": null
+    }
+  ],
+  "StudentsGroupSubject": []
+}
