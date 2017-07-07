@@ -1,9 +1,9 @@
 {
   "User": [
     {
-      "id": "VXNlcjo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDU=",
+      "id": "VXNlcjpmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY=",
       "userName": "system",
-      "password": "{\"salt\":\"g3Fav6XtoPT8xOnaVUwk2g==\",\"hash\":\"Z9IwBTtJ7MNmbMAENMmGfthnfK4omS4EfEXk06QpLAVVgvRXqZRqN8wdamrE5SRHytDg4LgqebR+GdpoTJd2SuWiy4zPZ6EijCtUnhi9AQPskz/cHKnmqW8pvFzu/IfbXgBovnjm/0zp7EGeDGaejKm9u9YoUaQNL4YbzPputzzB9Zquxl4aOGR9eXP7LZW/sg/IRoDqGNhgBQw9qf77DPG4nYc0M0W3mf7XlIOuIIldxvGzp1qVsu8KNwQsnq2DJffY4mpkG7Lzf2kWic+lu/y4htUA280gTziAPQr2gagCOEKsVvT9J7R5z6TO58tv++L7LJmMOHPqN7MUaGOJr7qVafm/Qsv/oL+Zekxh/pi8+86d8TS3itCeOlq5jbVK3aDrB5omqQl62/QZAY9DfIzKKjRWfHsbud1+WLy4ZM6OpS3N5JHnhR2O3dHZE4szzgrW64mc4bMCoCDqnNHAyd+VKQE8Ha2te9ljovOQE9sFOST47swG2Dx2t2w4/sJ9XEaSFfvqcbOT9NKtRX3sBHAT3TiJhI/7foj26HSTlRL7y958VtWJ96eudO+gnhcUAgCuHjBygsiYbgvUnFVuV4slc0GqY01o5F3shQxZRg08enCzhSaqIyM2SwaLOBgKHYOknJrSnOc95TS3tNMkVOwfIbdva4O+WEBhO0mPyT4=\"}",
+      "password": "{\"salt\":\"yKy6cMjWs+K7q2eaCvZ8Zw==\",\"hash\":\"Noy8z5NpHScLytxVn9qaSxpxSCmvrkxjQu/YKyZRsOO/DTNnGrWiCjb42xTKxzvnZfdLZeReL2sUeHec58JAMZa9Snw1EhfAH5ZSkyLkt0uTVpJwAdHmUkepmnqHrTQVuNecJWTuF900XHgtX6w3z5noQ+zTqGUcvS/fq38hzVfRcAUjBpHMoNj10e++4rR8Cpe+jdRgZAXYTbdHLp68Grjm0aJhshSJw0OXT++o9/bLOPrcbPzLv2noGeXBr66fI2OMMAz97SjuMuPzDQmnjfBXECYdzPVKgzh9Oh7mtXL4/kUDkE+34aZMyxte3579k1ygoc4bRlF3QpOL9DkzXJEn8o48DSRkU5ol4T4aEW4Zwf0Zqd1gqzbmQeeD5XNvfSgDqoeTu7BoZsPUd1Q2ZLikFMu+9II+dzr7jmMmqM9pDEvQDgemgZziBeStYMAe1x46A+QEMDnZkwKgZptqK7Y6CJyr4TFke6tJ5SHzUrX6D35ah9osP3NxE6pLkIZkCRB2A6p2NnG/fmomRWOuAneRjyPH36EkjbucYF6plewbi1ulGOxfWeUxsMY1t6Z3Mz+jdkuqrvl3/JNSvqLBizHd0hbuGtrTh04WcNKhrMlc7MzXaNEBYdbmLIHcSIEXPk6z7/WDQ6peYl+KSgjMtVXvn4Q5WslAtY8LxeUgooI=\"}",
       "isAdmin": true,
       "isSystem": true,
       "enabled": true
@@ -11,122 +11,272 @@
   ],
   "Student": [
     {
-      "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY=",
+      "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjA=",
       "firstName": "Alex",
-      "middleName": "I",
-      "lastName": "Vedmedenko",
+      "middleName": "J",
+      "lastName": "Johnson",
       "uin": "007",
-      "dateOfBirth": "1978-06-01T21:00:00.000Z",
+      "dateOfBirth": "1955-10-01T21:00:00.000Z",
       "profile": {
-        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWQ3"
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2Ix"
       },
       "group": {
-        "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg="
-      }
+        "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjI="
+      },
+      "followings": [
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjM="
+        }
+      ],
+      "followers": [
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjY="
+        }
+      ]
     },
     {
-      "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk=",
+      "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjM=",
+      "firstName": "Andy",
+      "middleName": "X",
+      "lastName": "Madison",
+      "uin": "008",
+      "dateOfBirth": "1950-03-10T21:00:00.000Z",
+      "profile": {
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2I0"
+      },
+      "group": {
+        "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
+      },
+      "followings": [],
+      "followers": [
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjA="
+        }
+      ]
+    },
+    {
+      "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjY=",
       "firstName": "Nike",
       "middleName": "M",
       "lastName": "Johnson",
       "uin": "009",
       "dateOfBirth": "1955-12-31T21:00:00.000Z",
       "profile": {
-        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWRh"
+        "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2I3"
       },
       "group": {
-        "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg="
-      }
-    },
-    {
-      "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY=",
-      "firstName": "Andrew",
-      "middleName": "X",
-      "lastName": "Manson",
-      "uin": "008",
-      "dateOfBirth": "1978-06-01T21:00:00.000Z",
-      "profile": {
-        "id": "U3R1ZGVudFByb2ZpbGU6NTk1YjRmOWQ4YTcyMzAwZDFmYjc1ZjYw"
+        "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
       },
-      "group": {
-        "id": "U3R1ZGVudHNHcm91cDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNjE="
-      }
+      "followings": [
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjA="
+        }
+      ],
+      "followers": []
     }
   ],
   "StudentsGroup": [
     {
-      "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDg=",
-      "name": "ANOTHERS SUPER GROUP",
-      "subjects": [],
-      "students": [
+      "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjI=",
+      "name": "Fun guys",
+      "subjects": [
         {
-          "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY="
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmI="
         },
         {
-          "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk="
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYzE="
+        }
+      ],
+      "students": [
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjA="
         }
       ]
     },
     {
-      "id": "U3R1ZGVudHNHcm91cDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZGI=",
-      "name": "MASTERS OF JS",
-      "subjects": [],
-      "students": []
-    },
-    {
-      "id": "U3R1ZGVudHNHcm91cDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNjE=",
-      "name": "JUST METEOR GUY!!!",
-      "subjects": [],
+      "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU=",
+      "name": "Cool Guys",
+      "subjects": [
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjk="
+        },
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmI="
+        },
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmY="
+        },
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYzE="
+        }
+      ],
       "students": [
         {
-          "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY="
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjM="
+        },
+        {
+          "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjY="
         }
       ]
     }
   ],
   "StudentProfile": [
     {
-      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWQ3",
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2Ix",
       "maths": 100,
       "physics": 100,
       "language": 100,
       "student": {
-        "id": "U3R1ZGVudDo1OTVhNjA0ZmU2ODI3ZDNkODNiMmE5ZDY="
+        "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjA="
       }
     },
     {
-      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YTYwNTBlNjgyN2QzZDgzYjJhOWRh",
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2I0",
       "maths": 100,
       "physics": 100,
       "language": 100,
       "student": {
-        "id": "U3R1ZGVudDo1OTVhNjA1MGU2ODI3ZDNkODNiMmE5ZDk="
+        "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjM="
       }
     },
     {
-      "id": "U3R1ZGVudFByb2ZpbGU6NTk1YjRmOWQ4YTcyMzAwZDFmYjc1ZjYw",
+      "id": "U3R1ZGVudFByb2ZpbGU6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2I3",
       "maths": 100,
       "physics": 100,
       "language": 100,
       "student": {
-        "id": "U3R1ZGVudDo1OTViNGY5ZDhhNzIzMDBkMWZiNzVmNWY="
+        "id": "U3R1ZGVudDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjY="
       }
     }
   ],
-  "Teacher": [],
+  "Teacher": [
+    {
+      "id": "VGVhY2hlcjo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjg=",
+      "firstName": "Ostin",
+      "middleName": "K",
+      "lastName": "Powers",
+      "subjects": [
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjk="
+        },
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmI="
+        }
+      ]
+    },
+    {
+      "id": "VGVhY2hlcjo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmU=",
+      "firstName": "James",
+      "middleName": "F",
+      "lastName": "Bond",
+      "subjects": [
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmY="
+        },
+        {
+          "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYzE="
+        }
+      ]
+    }
+  ],
   "Subject": [
     {
-      "id": "U3ViamVjdDo1OTVhNjE5Mjg3OGU5NzQxZWUyODhmYWY=",
-      "name": "COOL",
-      "groups": [],
-      "teacher": null
+      "id": "U3ViamVjdDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjk=",
+      "name": "be very COOL",
+      "groups": [
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
+        }
+      ],
+      "teacher": {
+        "id": "VGVhY2hlcjo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjg="
+      }
     },
     {
-      "id": "U3ViamVjdDo1OTVhNjE5Mjg3OGU5NzQxZWUyODhmYjA=",
-      "name": "COOL1",
-      "groups": [],
-      "teacher": null
+      "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmI=",
+      "name": "be very Fun",
+      "groups": [
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
+        },
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjI="
+        }
+      ],
+      "teacher": {
+        "id": "VGVhY2hlcjo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjg="
+      }
+    },
+    {
+      "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmY=",
+      "name": "be very very COOL",
+      "groups": [
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
+        }
+      ],
+      "teacher": {
+        "id": "VGVhY2hlcjo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmU="
+      }
+    },
+    {
+      "id": "U3ViamVjdDo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYzE=",
+      "name": "Fun no more",
+      "groups": [
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjU="
+        },
+        {
+          "id": "U3R1ZGVudHNHcm91cDo1OTVmOWMwMTBmYjEwMzM3ZWVkMDdjYjI="
+        }
+      ],
+      "teacher": {
+        "id": "VGVhY2hlcjo1OTVmOWMwMjBmYjEwMzM3ZWVkMDdjYmU="
+      }
     }
   ],
-  "StudentsGroupSubject": []
+  "Following": [
+    {
+      "id": "Rm9sbG93aW5nOjU5NWY5YzkzOTZjZGI2Mzk1YzBkZWNhNg==",
+      "followers": "595f9c010fb10337eed07cb3",
+      "followings": "595f9c010fb10337eed07cb0"
+    },
+    {
+      "id": "Rm9sbG93aW5nOjU5NWY5YzkzOTZjZGI2Mzk1YzBkZWNhNw==",
+      "followers": "595f9c010fb10337eed07cb0",
+      "followings": "595f9c010fb10337eed07cb6"
+    }
+  ],
+  "StudentsGroupSubject": [
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDEwZmIxMDMzN2VlZDA3Y2Jh",
+      "subject": "595f9c010fb10337eed07cb9",
+      "studentsGroup": "595f9c010fb10337eed07cb5"
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDIwZmIxMDMzN2VlZDA3Y2Jj",
+      "subject": "595f9c020fb10337eed07cbb",
+      "studentsGroup": "595f9c010fb10337eed07cb5"
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDIwZmIxMDMzN2VlZDA3Y2Jk",
+      "subject": "595f9c020fb10337eed07cbb",
+      "studentsGroup": "595f9c010fb10337eed07cb2"
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDIwZmIxMDMzN2VlZDA3Y2Mw",
+      "subject": "595f9c020fb10337eed07cbf",
+      "studentsGroup": "595f9c010fb10337eed07cb5"
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDIwZmIxMDMzN2VlZDA3Y2My",
+      "subject": "595f9c020fb10337eed07cc1",
+      "studentsGroup": "595f9c010fb10337eed07cb5"
+    },
+    {
+      "id": "U3R1ZGVudHNHcm91cFN1YmplY3Q6NTk1ZjljMDIwZmIxMDMzN2VlZDA3Y2Mz",
+      "subject": "595f9c020fb10337eed07cc1",
+      "studentsGroup": "595f9c010fb10337eed07cb2"
+    }
+  ]
 }

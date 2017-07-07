@@ -22,8 +22,18 @@
         "language": 100
       },
       "group": {
-        "name": "ANOTHERS SUPER GROUP"
-      }
+        "name": "Fun guys"
+      },
+      "followings": [
+        {
+          "uin": "008"
+        }
+      ],
+      "followers": [
+        {
+          "uin": "009"
+        }
+      ]
     },
     {
       "firstName": "Andy",
@@ -37,7 +47,7 @@
         "language": 100
       },
       "group": {
-        "name": "JUST METEOR GUY!!!"
+        "name": "Cool Guys"
       }
     },
     {
@@ -52,25 +62,62 @@
         "language": 100
       },
       "group": {
-        "name": "ANOTHERS SUPER GROUP"
+        "name": "Cool Guys"
       }
     }
   ],
-  "StudentsGroup": [
+  "Teacher": [
     {
-      "name": "MASTERS OF JS"
+      "firstName": "Ostin",
+      "middleName": "K",
+      "lastName": "Powers",
+      "subjects": [
+        {
+          "name": "be very COOL",
+          "groups": [
+            {
+              "name": "Cool Guys"
+            }
+          ]
+        },
+        {
+          "name": "be very Fun",
+          "groups": [
+            {
+              "name": "Cool Guys"
+            },
+            {
+              "name": "Fun guys"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "ANOTHERS SUPER GROUP"
+      "firstName": "James",
+      "middleName": "F",
+      "lastName": "Bond",
+      "subjects": [
+        {
+          "name": "be very very COOL",
+          "groups": [
+            {
+              "name": "Cool Guys"
+            }
+          ]
+        },
+        {
+          "name": "Fun no more",
+          "groups": [
+            {
+              "name": "Cool Guys"
+            },
+            {
+              "name": "Fun guys"
+            }
+          ]
+        }
+      ]
     }
-  ],
-  "Subject": [
-    {
-      "name": "COOL"
-    },
-    {
-      "name": "COOL1"
-    }
-  ],
-  "Teacher": []
+  ]
 }
