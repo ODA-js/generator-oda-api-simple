@@ -28,5 +28,22 @@ export default {
         opposite: 'students',
       },
     },
+    followings: {
+      description: 'relation with Followed To',
+      relation: {
+        belongsToMany: 'Student#',
+        using: 'Followings#followings',
+        opposite: 'followers',
+      },
+    },
+    followers: {
+      name: 'followers',
+      description: 'relation with Followed By',
+      relation: {
+        belongsToMany: 'Student#',
+        using: 'Followings#followers',
+        opposite: 'followings',
+      },
+    },
   },
 };
